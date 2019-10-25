@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Traversing Basic</title>
+</head>
+<body>
+  <p>Traversing pada jQuery</p>
+
+  <p>First</p>
+  <ul id="first">
+    <li>List item</li>
+    <li>List item</li>
+    <li>List item</li>
+    <li>List item</li>
+  </ul>
+  <button id="btn1">action</button>
+  <hr>
+
+  <p>Last</p>
+  <ul id="last">
+    <li>List item</li>
+    <li>List item</li>
+    <li>List item</li>
+    <li>List item</li>
+  </ul>
+  <button id="btn2">action</button>
+  <hr>
+
+  <p>Menggunakan paramater dengan metode eq</p>
+  <ul id="eq">
+    <li>List item</li>
+    <li>List item</li>
+    <li>List item</li>
+    <li>List item</li>
+  </ul>
+  <button id="btn3">action</button>
+  <hr>
+
+  <p>Filter</p>
+  <ul id="filter">
+    <li>List item</li>
+    <li>List item</li>
+    <li id="item3a">List item</li>
+    <li>List item</li>
+  </ul>
+  <button id="btn4">action</button>
+  <hr>
+
+  <p>Lawan dari filter yaitu "not()"</p>
+  <ul id="not">
+    <li>List item</li>
+    <li>List item</li>
+    <li id="item3b">List item</li>
+    <li>List item</li>
+  </ul>
+  <button id="btn5">action</button>
+  <hr>
+  
+  <script src="assets/js/jquery-3.4.1.min.js"></script>
+  <script>
+    $(function(){
+      $('#btn1').click(function(){
+        $('#first>li').first().css({
+          'fontSize': '20px',
+          'fontWeight': 'bold'
+        });
+      });
+
+      $('#btn2').click(function(){
+        $('#last>li').last().css({
+          'fontSize': '20px',
+          'fontWeight': 'bold'
+        });
+      });
+
+      $('#btn3').click(function(){
+        $('#eq>li').eq(1).css({
+          'fontSize': '20px',
+          'fontWeight': 'bold',
+          'backgroundColor': 'blue'
+        });
+      });
+
+      $('#btn4').click(function(){
+        $('#filter>li').filter('#item3a').css({
+          'fontSize': '20px',
+          'fontWeight': 'bold',
+          'backgroundColor': 'green'
+        });
+      });
+
+      $('#btn5').click(function(){
+        $('#not>li').not('#item3b').css({
+          'fontSize': '20px',
+          'fontWeight': 'bold',
+          'backgroundColor': 'teal'
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Traversing Siblings</title>
+</head>
+<body>
+  <h1>Sekolah Koding</h1>
+
+  <p id="pertama">Traversing Siblings</p>
+  <ul>
+    <li>List item</li>
+    <li>List item</li>
+    <li>List item</li>
+    <li>List item</li>
+  </ul>
+  <p id="demo">test</p>
+  <p>test</p>
+  <button id="btn1">action</button>
+  
+  <script src="assets/js/jquery-3.4.1.min.js"></script>
+  <script>
+    $(function(){
+      $('#btn1').click(function(){
+        $('h1').siblings().css('fontSize', '30px');
+        $('h1').next().css('backgroundColor', 'blue');
+        $('#pertama').nextAll().css('color', 'black');
+        $('#pertama').nextUntil('#demo').css('color', 'red');
+      });
+    });
+  </script>
+</body>
+</html>

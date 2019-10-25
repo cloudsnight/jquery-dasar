@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Jquery Dasar</title>
+</head>
+<body>
+  <h1>Belajar jQuery</h1>
+
+  <div id="group2">
+    <div class="text">Bob</div>
+    <img id="img2" src="assets/img/9609_southern_miss_golden_eagles-alternate-2003.png" width="150" height="200">
+    <button class="btn" id="btn2">Klik !</button>
+  </div>
+
+  <br><br>
+
+  <ul>
+    <li>List</li>
+    <li>List</li>
+    <li>List</li>
+  </ul>
+
+  <button id="btn3">Klik List !</button>
+
+  <script src="assets/js/jquery-3.4.1.min.js"></script>
+
+  <script>
+    $(function(){
+      // Tambah element didalam element diawalan
+      $('h1').append('add with append');
+
+      // Tambah element didalam element diakhiran
+      $('ul').prepend('add with prepend');
+
+      // Tambah element diluar element disesudah element
+      $('h1').after('<i>add with after</i>');
+
+      // Tambah element diluar element disebelum element
+      $('ul').before('<i>add with before</i>');
+    });
+  </script>
+</body>
+</html>

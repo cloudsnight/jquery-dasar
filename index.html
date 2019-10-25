@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Jquery Dasar</title>
+</head>
+<body>
+  <h1>Belajar jQuery</h1>
+
+  <div id="group2">
+    <div class="text">Bob</div>
+    <img id="img2" src="assets/img/9609_southern_miss_golden_eagles-alternate-2003.png" width="150" height="200">
+    <button class="btn" id="btn2">Klik !</button>
+  </div>
+  
+  <div id="group1">
+    <div class="text">Robo</div>
+    <img id="img1" src="assets/img/3bd5d170eaf1189d7cc7663af6051fd5.jpg" width="150" height="200">
+    <button class="btn" id="btn1">Klik !</button>
+  </div>
+
+  <script src="assets/js/jquery-3.4.1.min.js"></script>
+
+  <script>
+    $('h1').css('color', 'blue');
+    $('#btn2').text('Klik sini');
+
+    $('#btn1').click(function(){
+      $('#img1').animate({
+        left: "+=50",
+        height: "toggle"
+      }, 1000, function(){
+        
+      });
+    });
+  </script>
+</body>
+</html>

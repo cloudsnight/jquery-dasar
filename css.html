@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS dengan Jquery</title>
+</head>
+<body>
+  <div id="kotak">
+    <li>List</li>
+    <li>List</li>
+    <li>List</li>
+  </div><br>
+
+  <button id="btn1">Klik CSS</button>
+  
+  <script src="assets/js/jquery-3.4.1.min.js"></script>
+  <script>
+    $(function(){
+      $('#btn1').click(function(){
+        $('#kotak').css({
+          'color': 'blue',
+          'fontSize': '20px',
+          'backgroundColor': 'orange'
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Traversing Child</title>
+</head>
+<body>
+  <h1>Sekolah Koding</h1>
+
+  <p style="text-decoration: underline;">Contoh 1</p>
+  <div id="box1">
+    <p>test</p>
+    <p>test</p>
+    <div id="dalam">
+      <p>p dalam</p>
+      <span>span dalam</span>
+    </div>
+    <span>span luar</span>
+  </div>
+
+  <br><br><button id="btn1">action</button>
+
+  <hr>
+
+  <p style="text-decoration: underline;">Contoh 2</p>
+  <div id="box2">
+    <p>test</p>
+    <p>test</p>
+    <div id="dalam">
+      <p>p dalam</p>
+      <span>span dalam</span>
+    </div>
+    <span>span luar</span>
+  </div>
+
+  <br><br><button id="btn2">action</button>
+
+  <hr>
+
+  <p style="text-decoration: underline;">Contoh 3</p>
+  <div id="box3">
+    <p>test</p>
+    <p>test</p>
+    <div id="dalam">
+      <p>p dalam</p>
+      <span>span dalam</span>
+    </div>
+    <span>span luar</span>
+  </div>
+
+  <br><br><button id="btn3">action</button>
+
+  <hr>
+  
+  <script src="assets/js/jquery-3.4.1.min.js"></script>
+  <script>
+    $(function(){
+      $('#btn1').click(function(){
+        $('#box1').children().css('color', 'red');
+      });
+      
+      $('#btn2').click(function(){
+        $('#box2').find('span').css('color', 'red');
+      });
+
+      $('#btn3').click(function(){
+        $('#box3').find('*').css('color', 'red');
+      });
+    });
+  </script>
+</body>
+</html>

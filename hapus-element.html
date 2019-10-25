@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hapus Element</title>
+</head>
+<body>
+  <div id="kotak1" style="background-color:orange; height: 80px; width: 100px;">
+    <li>List</li>
+    <li>List</li>
+    <li>List</li>
+  </div>
+
+  <button id="btn1">Klik List !</button>
+
+  <div id="kotak2" style="background-color:green; height: 80px; width: 100px;">
+    <li>List</li>
+    <li>List</li>
+    <li>List</li>
+  </div>
+
+  <button id="btn2">Klik List!</button>
+
+  <script src="assets/js/jquery-3.4.1.min.js"></script>
+
+  <script>
+    $(function(){
+      // remove and empty
+      $('#btn1').click(function(){
+        // if else with is() method
+        if($('div').is('#kotak1')){
+          $('#kotak1').remove();
+        }else{
+          $('body').append('<div id="kotak1" style="background-color:orange; height: 80px; width: 100px;"><li>List</li><li>List</li><li>List</li></div>');
+        }
+      });
+
+      $('#btn2').click(function(){
+        // if else untuk empty() menggunakan get(0) cek if empty
+        if($('div#kotak2>li').get(0)){  //cek jika kosong atau ada isi
+          $('#kotak2').empty(); //Kosongkan elemen dalam id=#kotak2
+        }else{
+          $('#kotak2').append('<li>List</li><li>List</li><li>List</li>');  //masukan elemen dalam elemen #kotak2
+        }
+      });
+    });
+  </script>
+</body>
+</html>

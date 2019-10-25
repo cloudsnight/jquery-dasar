@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Class</title>
+
+  <style>
+    .orange{
+      background-color: orange;
+    }
+
+    .blue{
+      background-color: blue;
+    }
+  </style>
+
+</head>
+<body>
+  <div id="kotak" class="">
+    <li>List</li>
+    <li>List</li>
+    <li>List</li>
+  </div>
+
+  <button id="btn1">Add</button>
+  <button id="btn2">Remove</button>
+  <button id="btn3">Toggle</button>
+  
+  <script src="assets/js/jquery-3.4.1.min.js"></script>
+  <script>
+    $(function(){
+      // Add class
+      $('#btn1').click(function(){
+        $('#kotak').addClass('blue');
+      });
+      // Remove Class
+      $('#btn2').click(function(){
+        $('#kotak').removeClass('blue');
+      });
+      // Toggle Class
+      $('#btn3').click(function(){
+        $('#kotak').toggleClass();
+      });
+    });
+  </script>
+</body>
+</html>

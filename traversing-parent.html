@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Traversing Parent</title>
+</head>
+<body>
+  <h1>Sekolah Koding</h1>
+
+  <p id="pertama" style="text-decoration: underline">Contoh 1</p>
+
+  <!-- Parent pertama -->
+  <div id="boxatas">
+    <p>p box atas</p>
+    <!-- Parent kedua didalam parent -->
+    <div id="box1">
+      <p>box1</p>
+      <p>box1</p>
+
+      <!-- Parent ketiga didalam parent kedua -->
+      <div id="dalam">
+        <p>p dalam</p>
+        <span id="sd">span dalam</span>
+      </div>
+
+      <span>span box1</span>
+    </div>
+  </div>
+
+  <br><br><button id="btn1">action</button>
+  <hr>
+
+  <p id="kedua" style="text-decoration: underline">Contoh 2</p>
+
+  <!-- Parent pertama -->
+  <div id="boxatas2">
+    <p>p box atas</p>
+    <!-- Parent kedua didalam parent -->
+    <div id="box1">
+      <p>box1</p>
+      <p>box1</p>
+
+      <!-- Parent ketiga didalam parent kedua -->
+      <div id="dalam">
+        <p>p dalam</p>
+        <span id="sd">span dalam</span>
+      </div>
+
+      <span>span box1</span>
+    </div>
+  </div>
+
+  <br><br><button id="btn2">action</button>
+  <hr>
+
+  <p id="ketiga" style="text-decoration: underline">Contoh 3</p>
+
+  <!-- Parent pertama -->
+  <div id="boxatas3">
+    <p>p box atas</p>
+    <!-- Parent kedua didalam parent -->
+    <div id="box1">
+      <p>box1</p>
+      <p>box1</p>
+
+      <!-- Parent ketiga didalam parent kedua -->
+      <div id="dalam">
+        <p>p dalam</p>
+        <span id="sd">span dalam</span>
+      </div>
+
+      <span>span box1</span>
+    </div>
+  </div>
+
+  <br><br><button id="btn3">action</button>
+  <hr>
+
+  <p id="keempat" style="text-decoration: underline">Contoh 4</p>
+
+  <!-- Parent pertama -->
+  <div id="boxatas4">
+    <p>p box atas</p>
+    <!-- Parent kedua didalam parent -->
+    <div id="box1">
+      <p>box1</p>
+      <p>box1</p>
+
+      <!-- Parent ketiga didalam parent kedua -->
+      <div id="dalam">
+        <p>p dalam</p>
+        <span id="sd">span dalam</span>
+      </div>
+
+      <span>span box1</span>
+    </div>
+  </div>
+
+  <br><br><button id="btn4">action</button>
+  <hr>
+  
+  <script src="assets/js/jquery-3.4.1.min.js"></script>
+  <script>
+    $(function(){
+      $('#btn1').click(function(){
+        // parent() satu level dari child
+        $('#sd').parent().css('border', '2px solid blue');
+      });
+
+      $('#btn2').click(function(){
+        // parents()
+        $('#boxatas2>#box1>#dalam>#sd').parents().css('border', '1px solid red');
+      });
+
+      $('#btn3').click(function(){
+        // parents() dengan parameter
+        $('#boxatas3>#box1>#dalam>#sd').parents('#boxatas3>#box1').css('border', '2px solid green');
+      });
+
+      $('#btn4').click(function(){
+        // parentsUntil()
+        $('#boxatas4>#box1>#dalam>#sd').parentsUntil('#boxatas4').css('border', '2px solid purple');
+      });
+    });
+  </script>
+</body>
+</html>

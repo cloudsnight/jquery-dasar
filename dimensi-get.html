@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dimensi Get</title>
+</head>
+<style>
+  #kotak{
+    height: 54px;
+    width: 50px;
+    padding: 20px;
+    border: 4px solid black;
+    margin: 20px;
+  }
+
+  #detil span, #detil p{
+    display: inline;
+  }
+
+  #detil span{
+    line-height: 30px;
+  }
+
+</style>
+<body>
+  <div id="kotak">
+    <li>List</li>
+    <li>List</li>
+    <li>List</li>
+  </div><br>
+
+  <div id="detil">
+    <div id="tinggi">
+      <span>Tinggi: </span><p></p>
+    </div>
+    <div id="lebar">
+      <span>Lebar: </span><p></p>
+    </div>
+    <div id="padding">
+      <span>Padding: </span><p></p>
+    </div>
+    <div id="border">
+      <span>Border: </span><p></p>
+    </div>
+    <div id="margin">
+      <span>Margin: </span><p></p>
+    </div>
+  </div>
+
+  <button id="btn1">CSS</button>
+  
+  <script src="assets/js/jquery-3.4.1.min.js"></script>
+
+  <script>
+    $(function(){
+      $('#btn1').click(function(){
+        var tinggi = $('#kotak').height(),
+            lebar = $('#kotak').width(),
+            ph = $('#kotak').innerHeight(),
+            pw = $('#kotak').innerWidth(),
+            bh = $('#kotak').outerHeight(),
+            bw = $('#kotak').outerWidth(),
+            mh = $('#kotak').outerHeight(true),
+            mw = $('#kotak').outerWidth(true);
+
+        $('#tinggi>p').append(" "+tinggi);
+        $('#lebar>p').append(" "+lebar);
+        $('#padding>p').append(" "+ph+" "+pw);
+        $('#border>p').append(" "+bh+" "+bw);
+        $('#margin>p').append(" "+mh+" "+mw);
+      });
+    });
+  </script>
+</body>
+</html>

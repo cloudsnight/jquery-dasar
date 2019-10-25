@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Jquery Dasar</title>
+</head>
+<body>
+  <h1>Belajar jQuery</h1>
+
+  <div id="group2">
+    <div class="text"><b>Bob</b></div>
+    <img id="img2" src="assets/img/9609_southern_miss_golden_eagles-alternate-2003.png" width="150" height="200">
+    <button class="btn" id="btn2">Klik !</button>
+  </div>
+
+  <br><br>
+
+  <form>
+    <input type="text" id="inputID">
+    <input type="submit" value="submit">
+  </form>
+
+  <script src="assets/js/jquery-3.4.1.min.js"></script>
+
+  <script>
+    $(function(){
+      $('#btn2').click(function(){
+        $('.text').html('<i>Bob</i>');
+      });
+
+      $('#inputID').val('coba isi disini');
+
+      $('form').submit(function(){
+        alert($('#inputID').val());
+      });
+    });
+  </script>
+</body>
+</html>

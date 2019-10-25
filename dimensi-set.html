@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dimensi Get</title>
+</head>
+<style>
+  #kotak{
+    height: 54px;
+    width: 50px;
+    padding: 20px;
+    border: 4px solid black;
+    margin: 20px;
+  }
+
+  #detil span, #detil p{
+    display: inline;
+  }
+
+  #detil span{
+    line-height: 30px;
+  }
+
+</style>
+<body>
+  <div id="kotak">
+    <li>List</li>
+    <li>List</li>
+    <li>List</li>
+  </div><br>
+
+  <div id="detil">
+    <div id="tinggi">
+      <span>Tinggi: </span>
+    </div>
+    <div id="lebar">
+      <span>Lebar: </span>
+    </div>
+    <div id="padding">
+      <span>Padding: </span>
+    </div>
+    <div id="border">
+      <span>Border: </span>
+    </div>
+    <div id="margin">
+      <span>Margin: </span>
+    </div>
+  </div>
+
+  <br>
+  <button id="btn1">Dimensi Get</button><br><br>
+  <button id="btn2">Dimensi Set</button>
+  
+  <script src="assets/js/jquery-3.4.1.min.js"></script>
+
+  <script>
+    $(function(){
+      // Dimensi get
+      $('#btn1').click(function(){
+        var tinggi = $('#kotak').height(),
+            lebar = $('#kotak').width(),
+            ph = $('#kotak').innerHeight(),
+            pw = $('#kotak').innerWidth(),
+            bh = $('#kotak').outerHeight(),
+            bw = $('#kotak').outerWidth(),
+            mh = $('#kotak').outerHeight(true),
+            mw = $('#kotak').outerWidth(true);
+        
+        
+        $('#tinggi').append('<p style="display:none"> '+tinggi+'</p>');
+        $('#tinggi>p').fadeIn(2000);
+
+        $('#lebar').append('<p style="display:none;"> '+lebar+'</p>');
+        $('#lebar>p').fadeIn(2000);
+
+        $('#padding').append('<p style="display:none;"> '+ph+' '+pw+'</p>');
+        $('#padding>p').fadeIn(2000);
+
+        $('#border').append('<p style="display:none;"> '+bh+' '+bw+'</p>');
+        $('#border>p').fadeIn(2000);
+
+        $('#margin').append('<p style="display:none;"> '+mh+' '+mw+'</p>');
+        $('#margin>p').fadeIn(2000);
+      });
+
+      // Dimensi set
+      $('#btn2').click(function(){
+        $('#kotak').fadeOut("slow", function(){
+          $('#kotak').height(100).width(150);
+          $('#kotak').fadeIn("slow");
+        })
+      });
+    });
+  </script>
+</body>
+</html>
